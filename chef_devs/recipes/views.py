@@ -1,8 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 import datetime
 
-food_recipes = {
+
+#Index 
+def index(request):
+   print("You are looking at recipes")
+   title_page = "Recipes"
+   food_recipes = {
     'Spaghetti Bolognese': {
         'recipe': """
             1. Heat olive oil in a pan and sauté onions and garlic until fragrant.
@@ -272,8 +277,10 @@ food_recipes = {
         'food_name': 'Bruschetta'
     },
 }
-#Index 
-def index(request):
+   
+   return render(request, "recipes/index.html",
+                  context={'title_page':title_page,
+                           'food_recipes':food_recipes})
 
 #Cookies
 def cookies(request):
