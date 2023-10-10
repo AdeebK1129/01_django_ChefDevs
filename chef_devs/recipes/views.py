@@ -171,6 +171,106 @@ food_recipes = {
         """,
         'food_name': 'Macaroni and Cheese'
     },
+    'Chicken Parmesan': {
+        'recipe': """
+            1. Preheat the oven to 375°F (190°C).
+            2. Coat chicken breasts in seasoned breadcrumbs.
+            3. In a skillet, heat olive oil and brown the chicken on both sides.
+            4. Transfer the chicken to a baking dish and top with marinara sauce and mozzarella.
+            5. Bake until the cheese is melted and bubbly.
+            6. Cook pasta al dente and serve with the chicken.
+            7. Garnish with fresh basil and grated Parmesan.
+            8. Enjoy your flavorful Chicken Parmesan!
+        """,
+        'food_name': 'Chicken Parmesan'
+    },
+    'Shrimp Scampi': {
+        'recipe': """
+            1. Cook linguine pasta until al dente and set aside.
+            2. In a skillet, sauté minced garlic in olive oil.
+            3. Add shrimp and cook until pink.
+            4. Deglaze the pan with white wine and chicken broth.
+            5. Stir in lemon juice and red pepper flakes.
+            6. Toss the cooked pasta with the shrimp and sauce.
+            7. Garnish with chopped parsley and grated Parmesan.
+            8. Serve your delightful Shrimp Scampi!
+        """,
+        'food_name': 'Shrimp Scampi'
+    },
+    'Beef Stir-Fry': {
+        'recipe': """
+            1. Slice beef into thin strips and marinate in soy sauce and ginger.
+            2. Heat oil in a wok and stir-fry beef until browned.
+            3. Remove beef from the wok and set aside.
+            4. Stir-fry broccoli, bell peppers, and carrots until tender-crisp.
+            5. Add garlic and return the beef to the wok.
+            6. Pour in a mixture of soy sauce, oyster sauce, and sesame oil.
+            7. Toss everything together until well coated.
+            8. Serve your savory Beef Stir-Fry over rice!
+        """,
+        'food_name': 'Beef Stir-Fry'
+    },
+    'Mango Salsa': {
+        'recipe': """
+            1. Dice ripe mangoes, red onion, and tomatoes.
+            2. Finely chop cilantro and jalapeño for a kick.
+            3. Mix everything in a bowl and squeeze in lime juice.
+            4. Season with salt and pepper to taste.
+            5. Optional: Add diced avocado for creaminess.
+            6. Let the salsa sit for flavors to meld.
+            7. Serve with tortilla chips or as a topping for grilled chicken.
+            8. Enjoy the freshness of Mango Salsa!
+        """,
+        'food_name': 'Mango Salsa'
+    },
+       'Lemon Garlic Butter Shrimp': {
+        'recipe': """
+            1. In a skillet, melt butter and sauté minced garlic until fragrant.
+            2. Add large shrimp to the skillet and cook until pink.
+            3. Squeeze fresh lemon juice over the shrimp.
+            4. Season with salt, black pepper, and red pepper flakes.
+            5. Stir in chopped parsley for freshness.
+            6. Serve the Lemon Garlic Butter Shrimp over pasta or rice.
+            7. Enjoy the zesty flavors of this quick dish!
+        """,
+        'food_name': 'Lemon Garlic Butter Shrimp'
+    },
+    'Vegetarian Buddha Bowl': {
+        'recipe': """
+            1. Cook quinoa or rice according to package instructions.
+            2. Roast a variety of vegetables (sweet potatoes, broccoli, carrots) with olive oil.
+            3. Sauté kale or spinach with garlic until wilted.
+            4. Assemble bowls with quinoa, roasted veggies, sautéed greens, and avocado slices.
+            5. Drizzle with tahini or your favorite dressing.
+            6. Garnish with sesame seeds or nuts.
+            7. Enjoy a colorful and nutritious Buddha Bowl!
+        """,
+        'food_name': 'Buddha Bowl'
+    },
+    'Chicken Fajitas': {
+        'recipe': """
+            1. Slice chicken breasts into strips and marinate in fajita seasoning.
+            2. In a skillet, cook sliced bell peppers and onions until softened.
+            3. Remove veggies from the skillet and cook the marinated chicken until done.
+            4. Mix veggies and chicken together in the skillet.
+            5. Warm tortillas and fill with the chicken and veggie mixture.
+            6. Top with salsa, guacamole, and sour cream.
+            7. Serve your flavorful Chicken Fajitas!
+        """,
+        'food_name': 'Chicken Fajitas'
+    },
+    'Tomato Basil Bruschetta': {
+        'recipe': """
+            1. Dice ripe tomatoes and place in a bowl.
+            2. Add chopped fresh basil, minced garlic, and balsamic vinegar.
+            3. Drizzle with extra virgin olive oil and season with salt and pepper.
+            4. Mix everything together and let it sit for at least 15 minutes.
+            5. Toast slices of baguette until golden.
+            6. Spoon the tomato basil mixture over the toasted bread.
+            7. Serve your refreshing Tomato Basil Bruschetta!
+        """,
+        'food_name': 'Bruschetta'
+    },
 }
 #Index 
 def index(request):
