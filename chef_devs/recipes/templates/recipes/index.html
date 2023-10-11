@@ -8,7 +8,7 @@
     <h2>Recipe List</h2>
     <ul>
         {% for food, details in food_recipes.items %}
-            <li><a href="{% url 'recipe_info' food %}">{{ food }}</a></li>
+            <li>{{ food }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

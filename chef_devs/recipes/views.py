@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .recipe_forms import RecipeForm
 import datetime
 
 food_recipes = {
@@ -392,11 +393,18 @@ food_recipes = {
 
 #Index
 def index(request):
-   print("You are looking at recipes")
-   title_page = "Recipes"
-   return render(request, "recipes/index.html",
-                  context={'title_page':title_page,
-                           'food_recipes':food_recipes})
+    print("You are looking at recipes")
+    title_page = "Recipes"
+    form = RecipeForm()
+    
+    # New code for the form handling
+    food_name = None
+    if request.method == 'POST':
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            food_name = form.cleaned_data['food_name']
+
+    return render(request, 'recipes/index.html', {'title_page': title_page, 'food_recipes': food_recipes, 'form': form, 'food_name': food_name})
 
 #Cookies
 def cookies(request):
