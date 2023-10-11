@@ -392,6 +392,8 @@ food_recipes = {
 
 #Index
 def index(request):
+   print("You are looking at recipes")
+   title_page = "Recipes"
    return render(request, "recipes/index.html",
                   context={'title_page':title_page,
                            'food_recipes':food_recipes})
