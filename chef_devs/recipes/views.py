@@ -390,7 +390,7 @@ food_recipes = {
     }
 }
 
-#Index 
+#Index
 def index(request):
 
 #Cookies
