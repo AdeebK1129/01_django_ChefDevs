@@ -1,9 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 import datetime
 
+<<<<<<< HEAD
 food_recipes = {
     'Beef and Broccoli Stir-Fry': {
+=======
+
+#Index 
+def index(request):
+   print("You are looking at recipes")
+   title_page = "Recipes"
+   food_recipes = {
+    'Spaghetti Bolognese': {
+>>>>>>> 56d52db0711116530e3888bcba78c34caea7a860
         'recipe': """
             1. Slice beef thinly and marinate in soy sauce, garlic, and ginger.
             2. In a wok, stir-fry marinated beef until browned.
@@ -392,6 +402,10 @@ food_recipes = {
 
 #Index
 def index(request):
+   return render(request, "recipes/index.html",
+                  context={'title_page':title_page,
+                           'food_recipes':food_recipes})
+
 
 #Cookies
 def cookies(request):

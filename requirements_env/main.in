@@ -1,3 +1,1 @@
--c main.txt
-
-nodeenv
+django==4.2
