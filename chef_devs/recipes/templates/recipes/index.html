@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 
 {% block content %}
@@ -6,3 +7,19 @@
 
 
 {% endblock content %}
+=======
+{% extends 'base.html' %}
+
+{% block title %}Recipes{% endblock %}
+
+{% block header %}My Recipes{% endblock %}
+
+{% block content %}
+    <h2>Recipe List</h2>
+    <ul>
+        {% for food, details in food_recipes.items %}
+            <li><a href="{% url 'recipe_info' food %}">{{ food }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+>>>>>>> adeeb
