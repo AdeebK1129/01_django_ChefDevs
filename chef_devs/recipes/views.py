@@ -392,7 +392,7 @@ food_recipes = {
 
 #Index 
 def index(request):
-
+    
 #Cookies
 def cookies(request):
     dico_cookies = request.COOKIES
