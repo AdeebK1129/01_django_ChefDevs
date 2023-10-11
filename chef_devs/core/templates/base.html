@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Recipes{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-</head>
-<body>
-    <header>
-        <h1>{% block header %}My Recipes{% endblock %}</h1>
-    </header>
-    <nav>
-        <a href="{% url 'recipes_list' %}">Recipes</a>
-    </nav>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-</body>
-=======
 {% load static %}
 
 <!DOCTYPE html>
@@ -39,5 +18,4 @@
    {% block js %}
    {% endblock js %}
 </script>
->>>>>>> 4c8c62b2ed072050e3ab2780a937b99fcffccbc9
 </html>
