@@ -388,17 +388,22 @@ def index(request):
             food_name = form.cleaned_data['food_name']
             if food_name in food_recipes:
                 recipe = food_recipes[food_name]['recipe']
-            else:
-                recipe = None
-            return render(
-                request,
-                'recipes/index.html',
-                {'form': form, 'food_name': food_name, 'recipe': recipe, 'food_recipes': food_recipes},
-            )
+                return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe': recipe})
+
     else:
         form = RecipeForm()
 
     return render(request, 'recipes/index.html', {'form': form, 'food_name': None, 'recipe': None, 'food_recipes': food_recipes})
+
+def recipe_info(request):
+    food_name = request.POST.get('food_name')  
+
+    if food_name and food_name in food_recipes:
+        recipe_details = food_recipes[food_name]
+        print("Recipe details:", recipe_details)  
+        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe_details': recipe_details})
+
+    return redirect('recipe_info')
 
 #Cookies
 def cookies(request):
