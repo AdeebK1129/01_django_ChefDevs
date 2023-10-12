@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.http import Http404
 from .recipe_forms import RecipeForm
 import datetime
 import json
@@ -382,8 +383,6 @@ food_recipes = {
 }
 
 #Index
-
-#Index
 def index(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST)
@@ -423,9 +422,5 @@ def recipe_info(request):
         response.set_cookie(key=visit_count_key_with_date, value=visit_count, expires=datetime.datetime.combine(current_date + datetime.timedelta(days=1), datetime.time.min))
         return response
     else:
-        error_message = f'Sorry, no recipe available for "{food_name}". Try searching one from the list above.'
+        error_message = f'Sorry, no recipe available for "{food_name}". Try going back and searching for a food from the recipes list.'
         return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None})
-
-
-
-
