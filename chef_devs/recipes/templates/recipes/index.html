@@ -3,23 +3,23 @@
 {% block content %}
 <h2>Recipe Search</h2>
 <form method="post" action="{% url 'recipe_info' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-    </form>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
 
-    {% if recipe_details %}
+{% if recipe_details %}
     <h2>{{ food_name }} Recipe</h2>
     <p>{{ recipe_details.recipe }}</p>
-    {% else %}
+{% elif food_name %}
     <p>Sorry, we don't have a recipe for "{{ food_name }}". Try searching one from the list above.</p>
-    {% endif %}
+{% endif %}
 
-    <h2>All Foods</h2>
-    <ul>
-        {% for food, info in food_recipes.items %}
-            <li>{{ food }}</li>
-        {% endfor %}
-    </ul>
+<h2>All Foods</h2>
+<ul>
+    {% for food, info in food_recipes.items %}
+        <li>{{ food }}</li>
+    {% endfor %}
+</ul>
 
 {% endblock %}

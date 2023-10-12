@@ -381,6 +381,8 @@ food_recipes = {
 }
 
 #Index
+
+#Index
 def index(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST)
@@ -400,11 +402,13 @@ def recipe_info(request):
 
     if food_name and food_name in food_recipes:
         recipe_details = food_recipes[food_name]
-        print("Recipe details:", recipe_details)  
         return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe_details': recipe_details})
+    else:
+        error_message = f'Sorry, no recipe available for "{food_name}". Try searching one from the list above.'
+        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message})
 
-    return redirect('recipe_info')
 
 #Cookies
 def cookies(request):
     dico_cookies = request.COOKIES
+
