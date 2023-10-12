@@ -5,10 +5,12 @@
     <p>{{ error_message }}</p>
   {% else %}
     <h1>{{ food_name }}</h1>
-    {% if recipe_details.recipe %}
-      <p>{{ recipe_details.recipe }}</p>
-    {% else %}
-      <p>No recipe available for {{ food_name }}</p>
+    <p>Visit Count: {{ visit_count }}</p>
+    {% if recipe %}
+    <p>{{ recipe }}</p>
+    {% elif food_name %}
+    <p>No recipe available for {{ food_name }}</p>
     {% endif %}
+    <p><a href="{% url 'index' %}">Go Back</a></p>
   {% endif %}
 {% endblock %}

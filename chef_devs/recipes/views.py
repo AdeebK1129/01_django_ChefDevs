@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .recipe_forms import RecipeForm
 import datetime
+import json
 
 food_recipes = {
     'Beef and Broccoli Stir-Fry': {
@@ -140,7 +141,7 @@ food_recipes = {
         """,
         'food_name': 'Chocolate Chip Cookies'
     },
-    'Dim Sum - Shumai (Shrimp Dumplings)': {
+    'Dim Sum Shumai': {
         'recipe': """
             1. Mix ground shrimp, minced garlic, ginger, and soy sauce.
             2. Place a spoonful of the shrimp mixture in the center of a dumpling wrapper.
@@ -149,7 +150,7 @@ food_recipes = {
             5. Garnish with chopped green onions.
             6. Serve the Shumai with soy sauce and enjoy your Dim Sum!
         """,
-        'food_name': 'Shumai'
+        'food_name': 'Dim Sum Shumai'
     },
     'Gourmet Macaroni and Cheese': {
         'recipe': """
@@ -389,26 +390,42 @@ def index(request):
         if form.is_valid():
             food_name = form.cleaned_data['food_name']
             if food_name in food_recipes:
-                recipe = food_recipes[food_name]['recipe']
-                return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe': recipe})
+                recipe_details = food_recipes[food_name]
+                recipe = recipe_details['recipe']
+                return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe_details': recipe_details, 'recipe': recipe})
 
     else:
         form = RecipeForm()
 
     return render(request, 'recipes/index.html', {'form': form, 'food_name': None, 'recipe': None, 'food_recipes': food_recipes})
 
+
 def recipe_info(request):
-    food_name = request.POST.get('food_name')  
+    food_name = request.POST.get('food_name')
+    visit_count_key = f'visit_count_{food_name.replace(" ", "_")}' if food_name else 'visit_count_unknown'
+    visit_count = 0
+    current_date = datetime.datetime.now().date()
+    visit_count_key_with_date = f'{visit_count_key}_{current_date}'
+
+    if visit_count_key_with_date in request.COOKIES:
+        try:
+            visit_count = int(request.COOKIES[visit_count_key_with_date]) + 1
+        except ValueError:
+            visit_count = 1
+    else:
+        visit_count = 1
 
     if food_name and food_name in food_recipes:
         recipe_details = food_recipes[food_name]
-        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe_details': recipe_details})
+        recipe = recipe_details['recipe']
+        response = render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'visit_count': visit_count, 'recipe': recipe})
+        
+        response.set_cookie(key=visit_count_key_with_date, value=visit_count, expires=datetime.datetime.combine(current_date + datetime.timedelta(days=1), datetime.time.min))
+        return response
     else:
         error_message = f'Sorry, no recipe available for "{food_name}". Try searching one from the list above.'
-        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message})
+        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None})
 
 
-#Cookies
-def cookies(request):
-    dico_cookies = request.COOKIES
+
 
