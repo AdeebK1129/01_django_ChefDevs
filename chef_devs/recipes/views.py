@@ -289,17 +289,6 @@ food_recipes = {
         """,
         'food_name': 'Pad See Ew'
     }, 
-    'Shumai': {
-        'recipe': """
-            1. Mix ground shrimp, minced garlic, ginger, and soy sauce.
-            2. Place a spoonful of the shrimp mixture in the center of a dumpling wrapper.
-            3. Fold the edges of the wrapper towards the center, leaving the top open.
-            4. Place the dumplings in a steamer and steam until cooked.
-            5. Garnish with chopped green onions.
-            6. Serve the Shumai with soy sauce and enjoy your Dim Sum!
-        """,
-        'food_name': 'Shumai'
-    },
     'Shrimp Scampi': {
         'recipe': """
             1. Cook linguine pasta until al dente and set aside.
