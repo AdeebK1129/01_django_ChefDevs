@@ -1,10 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
-<h2> All Ingredients, Stocks and Prices </h2>
+<h2>Ingredient Search</h2>
+<form method="post" action="{% url 'checkout_info' %}">
+	{% csrf_token %} {{ form.as_p }}
+	<input type="submit" value="Submit" />
+</form>
+
+<h2>All Ingredients, Stocks and Prices</h2>
 <ul>
-    {% for ingredient in ingredients%}
-        <li>{{ ingredient}} {{ingredients.ingredient[0]}}</li>
-    {% endfor %}
+	{% for ingredient in ingredients%}
+	<li>{{ ingredient}} hi</li>
+	{% endfor %}
 </ul>
 {% endblock %}

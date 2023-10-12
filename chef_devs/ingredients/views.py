@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .checkout import Checkout
 import datetime
 import json
 
@@ -79,6 +80,20 @@ ingredients = {
     "White sugar": [80, 1.0],
     "White wine": [25, 8.0]
 }
-
 def index(request):
-    return render(request, 'ingredients/index.html', context={'ingredients':ingredients})
+    if request.method == 'POST':
+        form = Checkout(request.POST)
+        if form.is_valid():
+            ingredient_name = form.cleaned_data['ingredient_name']
+            if ingredient_name in ingredients:
+                stock = ingredients[ingredient_name][0]
+                price = ingredients[ingredient_name][1]
+                return render(request, 'ingredients/checkout_info.html', {'ingredient_name': ingredient_name, 'stock': stock, 'price':price})
+
+    else:
+        form = Checkout()
+    return render(request, 'ingredients/index.html', {'ingredient_name': None, 'stock': None, 'price':None})
+
+def checkout_info(request):
+    ingredient_name = request.POST.get('ingredient_name')
+    return render(request)
