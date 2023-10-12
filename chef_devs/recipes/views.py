@@ -393,18 +393,23 @@ food_recipes = {
 
 #Index
 def index(request):
-    print("You are looking at recipes")
-    title_page = "Recipes"
-    form = RecipeForm()
-    
-    # New code for the form handling
-    food_name = None
     if request.method == 'POST':
         form = RecipeForm(request.POST)
         if form.is_valid():
             food_name = form.cleaned_data['food_name']
+            if food_name in food_recipes:
+                recipe = food_recipes[food_name]['recipe']
+            else:
+                recipe = None
+            return render(
+                request,
+                'recipes/index.html',
+                {'form': form, 'food_name': food_name, 'recipe': recipe, 'food_recipes': food_recipes},
+            )
+    else:
+        form = RecipeForm()
 
-    return render(request, 'recipes/index.html', {'title_page': title_page, 'food_recipes': food_recipes, 'form': form, 'food_name': food_name})
+    return render(request, 'recipes/index.html', {'form': form, 'food_name': None, 'recipe': None, 'food_recipes': food_recipes})
 
 #Cookies
 def cookies(request):
