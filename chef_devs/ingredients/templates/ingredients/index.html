@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2> All Ingredients, Stocks and Prices </h2>
+<ul>
+    {% for ingredient in ingredients%}
+        <li>{{ ingredient}} {{ingredients.ingredient[0]}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
