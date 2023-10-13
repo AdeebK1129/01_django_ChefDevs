@@ -1,16 +1,45 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Ingredient Search</h2>
-<form method="post" action="{% url 'ingredients:checkout_info' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
+<h3>Ingredient Search</h3>
+<form method="post" action="{% url 'checkout_info' %}">
+	{% csrf_token %} 
+     {{ form.as_p }}
+	<input type="submit" value="Submit" />
 </form>
 
-<h2>All Ingredients, Stocks and Prices</h2>
-<ul>
-	{% for ingredient in ingredients%}
-	<li>{{ ingredient}}</li>
-	{% endfor %}
-</ul>
+
+<h3>All Ingredients, Stocks and Prices</h3>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<div style="display: flex; overflow-x: auto;">
+
+     {% for ingredient_group in ingredient_groups %}
+       <table style="margin-right: 10px;">
+         <tr>
+           <th>Ingredient</th>
+           <th>Stock</th>
+           <th>Price($)</th>
+         </tr>
+         {% for ingredient, data in ingredient_group %}
+           <tr>
+             <td>{{ ingredient }}</td>
+             <td>{{ data.0 }}</td>
+             <td>{{ data.1 }}</td>
+           </tr>
+         {% endfor %}
+       </table>
+     {% endfor %}
+   
+</div>
+
+<a href="{% url 'cart' %}">Go to Cart</a>
+
+   
+   
+   
+
+   
 {% endblock %}
+

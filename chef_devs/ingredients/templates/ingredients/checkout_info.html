@@ -1,1 +1,20 @@
-{% extends 'base.html' %} {% block content %}{{ingredient_name}} {{stock}} {{price}} {% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if error_message %}
+    <p>{{ error_message }}</p>
+  {% else %}
+    <h1>{{ingredient_name}} </h1>
+    <p>Visit Count: {{ visit_count }}</p>
+    <p>Stock Available: {{stock}}</p>
+    <p>Price per Unit: ${{price}}</p>
+    
+    <form action="{% url 'cart' %}" method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <button type="submit">Buy Ingredients</button>
+   </form>
+    
+  {% endif %}
+  <p><a href="{% url 'index' %}">Go Back</a></p>
+{% endblock %}
