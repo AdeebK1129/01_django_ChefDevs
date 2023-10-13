@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2>Recipe Search</h2>
-<form method="post" action="{% url 'recipe_info' %}">
+<form method="post" action="{% url 'recipes:recipe_info' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
@@ -22,4 +22,5 @@
     {% endfor %}
 </ul>
 
+<p><a href="{% url 'ingredients:index' %}">Go to Ingredients</a></p>
 {% endblock %}
