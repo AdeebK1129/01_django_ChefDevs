@@ -405,7 +405,6 @@ food_recipes = {
     }
 }
 
-#Index View with Post Form
 def index(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST)
@@ -421,7 +420,6 @@ def index(request):
 
     return render(request, 'recipes/index.html', {'form': form, 'food_name': None, 'recipe': None, 'food_recipes': food_recipes})
 
-#Recipe Info View with Cookies 
 def recipe_info(request):
     food_name = request.POST.get('food_name')
     visit_count_key = f'visit_count_{food_name.replace(" ", "_")}' if food_name else 'visit_count_unknown'

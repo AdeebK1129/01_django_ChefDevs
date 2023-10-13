@@ -112,7 +112,7 @@ def index(request):
                     'stock': stock,
                     'price': price,
                     'ingredients': ingredients,
-                    'form': CartForm()  # Include CartForm in the context
+                    'form': CartForm()  
                 })
 
     else:
@@ -139,16 +139,16 @@ def checkout_info(request):
     if ingredient_name in ingredients:
         stock = ingredients[ingredient_name][0]
         price = ingredients[ingredient_name][1]
-        max_quantity = stock  # Set max_quantity to the available stock
+        max_quantity = stock 
         form = CartForm(initial={'ingredient_name': ingredient_name, 'quantity': 1, 'view': False})
-        form.fields['quantity'].widget.attrs['max'] = max_quantity  # Update max_value attribute
+        form.fields['quantity'].widget.attrs['max'] = max_quantity  
 
         response = render(request, 'ingredients/checkout_info.html', {
             'ingredient_name': ingredient_name,
             'stock': stock,
             'price': price,
             'visit_count': visit_count,
-            'form': form  # Include CartForm in the context
+            'form': form 
         })
 
         response.set_cookie(key=visit_count_key_with_date, value=visit_count,
@@ -159,7 +159,7 @@ def checkout_info(request):
         stock = None
         price = None
         error_message = "Ingredient not found"
-        form = CartForm()  # No initial value for ingredient_name
+        form = CartForm()  
         return render(request, 'ingredients/checkout_info.html', {
             'ingredient_name': ingredient_name,
             'error_message': error_message,
@@ -167,7 +167,7 @@ def checkout_info(request):
             'stock': stock,
             'price': price,
             'ingredients': ingredients,
-            'form': form  # Include CartForm in the context
+            'form': form 
         })
 
 
@@ -201,14 +201,14 @@ def cart(request):
                                 'total_price': quantity * ingredients[ingredient_name][1]
                             }
 
-                        # Calculate total cost
+                       
                         total_cost = sum(item['total_price'] for item in cart_items.values())
 
                         return render(request, 'ingredients/cart.html', {
                             'cart_items': cart_items,
                             'ingredients': ingredients,
                             'form': CartForm(),
-                            'total_cost': total_cost  # Include total_cost in the context
+                            'total_cost': total_cost 
                         })
                     else:
                         error_message = f"Insufficient stock. Available: {stock}"
