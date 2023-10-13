@@ -446,3 +446,16 @@ def recipe_info(request):
     else:
         error_message = f'Sorry, no recipe available for "{food_name}". Try going back and searching for a food from the recipes list.'
         return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None})
+    
+from django.shortcuts import redirect
+
+def forms(request):
+    if request.method == "POST":
+        food_name = request.POST.get('food_name')
+        if not food_name:
+            messages.add_message(request, messages.ERROR, "The form sent is incomplete")
+            return render(request, 'recipe_info.html', {'food_recipes': food_recipes})
+        else:
+            return render(request, 'recipe_info.html', {'food_recipes': food_recipes})
+
+    return render(request, 'recipes/forms.html', {'food_recipes': food_recipes})
