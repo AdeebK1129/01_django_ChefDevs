@@ -448,3 +448,8 @@ def recipe_info(request):
     else:
         error_message = f'Sorry, no recipe available for "{food_name}". Try going back and searching for a food from the recipes list.'
         return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None})
+    
+
+
+
+
