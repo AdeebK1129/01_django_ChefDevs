@@ -481,12 +481,19 @@ def list_view(request):
         if 'Submit1' in request.POST:
             food_name = request.POST.get('food_name')
             food_recipe = request.POST.get('food_recipe')
-            food_recipes[food_name] = food_recipe
+            new_recipe = {
+                'recipe': food_recipe,
+                'food_name': food_name,
+                'food_image': None  
+            }
+            print(new_recipe)
+            food_recipes[food_name] = new_recipe
             print('submit 1')
             return render(request, 'recipes/list_view.html', {'food_recipes': food_recipes})
         
         if 'Submit2' in request.POST:
             food_name = request.POST.get('food_name')
+            print(food_recipes[food_name])
             if food_name in food_recipes:
                 food_recipes.pop(food_name)
                 return render(request, 'recipes/list_view.html', {'food_recipes': food_recipes})
