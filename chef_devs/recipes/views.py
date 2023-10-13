@@ -17,7 +17,7 @@ food_recipes = {
             8. Enjoy this flavorful stir-fry!
         """,
         'food_name': 'Beef and Broccoli',
-        'food_image': 'Beef_and_Broccoli_Stir-Fry.jpg'
+        'food_image': 'image/Beef_and_Broccoli_Stir-Fry.jpg'
     },
     'Bibimbap': {
         'recipe': """
@@ -31,7 +31,7 @@ food_recipes = {
             8. Mix everything together before eating your Bibimbap!
         """,
         'food_name': 'Bibimbap',
-        'food_image': 'Bibimbap.jpg'
+        'food_image': 'image/Bibimbap.jpg'
     },
     'Caprese Salad': {
         'recipe': """
@@ -43,7 +43,7 @@ food_recipes = {
             6. Serve your Caprese Salad immediately for a refreshing dish!
         """,
         'food_name': 'Caprese Salad',
-        'food_image': 'Caprese_Salad.jpg'
+        'food_image': 'image/Caprese_Salad.jpg'
     },
     'Caesar Salad': {
         'recipe': """
@@ -55,7 +55,7 @@ food_recipes = {
             6. Serve your Caesar Salad chilled and enjoy!
         """,
         'food_name': 'Caesar Salad',
-        'food_image': 'Caesar_Salad.webp'
+        'food_image': 'image/Caesar_Salad.webp'
     },
     'Chicken Alfredo': {
         'recipe': """
@@ -68,7 +68,7 @@ food_recipes = {
             7. Garnish with parsley and extra Parmesan before serving.
         """,
         'food_name': 'Chicken Alfredo',
-        'food_image': 'Chicken_Alfredo.jpg'
+        'food_image': 'image/Chicken_Alfredo.jpg'
     },
     'Chicken Curry': {
         'recipe': """
@@ -81,7 +81,7 @@ food_recipes = {
             7. Enjoy the rich flavors of your Chicken Curry!
         """,
         'food_name': 'Chicken Curry',
-        'food_image': 'Chicken_Curry.jpg'
+        'food_image': 'image/Chicken_Curry.jpg'
     },
     'Chicken Fajitas': {
         'recipe': """
@@ -94,7 +94,7 @@ food_recipes = {
             7. Serve your flavorful Chicken Fajitas!
         """,
         'food_name': 'Chicken Fajitas',
-        'food_image': 'Chicken_Fajitas.jpg'
+        'food_image': 'image/Chicken_Fajitas.jpg'
     },
     'Chicken Parmesan': {
         'recipe': """
@@ -108,7 +108,7 @@ food_recipes = {
             8. Enjoy your flavorful Chicken Parmesan!
         """,
         'food_name': 'Chicken Parmesan',
-        'food_image': 'Chicken_Parmesan.jpg'
+        'food_image': 'image/Chicken_Parmesan.jpg'
     },
     'Chicken Teriyaki': {
         'recipe': """
@@ -120,7 +120,7 @@ food_recipes = {
             6. Garnish with sesame seeds and enjoy the savory dish!
         """,
         'food_name': 'Chicken Teriyaki',
-        'food_image': 'Chicken_Teriyaki.jpg'
+        'food_image': 'image/Chicken_Teriyaki.jpg'
     },
     'Chocolate Cake': {
         'recipe': """
@@ -133,7 +133,7 @@ food_recipes = {
             7. Slice and enjoy your decadent Chocolate Cake!
         """,
         'food_name': 'Chocolate Cake',
-        'food_image': 'Chocolate_Cake.jpg'
+        'food_image': 'image/Chocolate_Cake.jpg'
     },
     'Chocolate Chip Cookies': {
         'recipe': """
@@ -148,7 +148,7 @@ food_recipes = {
             9. Enjoy warm and gooey Chocolate Chip Cookies!
         """,
         'food_name': 'Chocolate Chip Cookies',
-        'food_image': 'Chocolate_Chip_Cookies_.jpg'
+        'food_image': 'image/Chocolate_Chip_Cookies_.jpg'
     },
     'Dim Sum Shumai': {
         'recipe': """
@@ -160,7 +160,7 @@ food_recipes = {
             6. Serve the Shumai with soy sauce and enjoy your Dim Sum!
         """,
         'food_name': 'Dim Sum Shumai',
-        'food_image': 'Dim_Sum_Shumai.jpg'
+        'food_image': 'image/Dim_Sum_Shumai.jpg'
     },
     'Gourmet Macaroni and Cheese': {
         'recipe': """
@@ -174,7 +174,7 @@ food_recipes = {
             8. Serve your Gourmet Macaroni and Cheese hot and creamy!
         """,
         'food_name': 'Macaroni and Cheese',
-        'food_image': 'Gourmet_Macaroni_and_Cheese.jpg'
+        'food_image': 'image/Gourmet_Macaroni_and_Cheese.jpg'
     },
     'Grilled Salmon': {
         'recipe': """
@@ -186,7 +186,7 @@ food_recipes = {
             6. Enjoy the light and healthy Grilled Salmon!
         """,
         'food_name': 'Grilled Salmon',
-        'food_image': 'Grilled_Salmon.jpg'
+        'food_image': 'image/Grilled_Salmon.jpg'
     },
     'Hamburger': {
         'recipe': """
@@ -198,7 +198,7 @@ food_recipes = {
             6. Place the patty on the bun, stack toppings, and enjoy your Hamburger!
         """,
         'food_name': 'Hamburger',
-        'food_image': 'Hamburger.jpg'
+        'food_image': 'image/Hamburger.jpg'
     },
     'Kung Pao Chicken': {
         'recipe': """
@@ -212,7 +212,7 @@ food_recipes = {
             8. Enjoy the spicy and tangy taste!
         """,
         'food_name': 'Kung Pao Chicken',
-        'food_image': 'Kung_Pao_Chicken.jpg'
+        'food_image': 'image/Kung_Pao_Chicken.jpg'
     },
     'Lemon Garlic Butter Shrimp': {
         'recipe': """
@@ -225,7 +225,7 @@ food_recipes = {
             7. Enjoy the zesty flavors of this quick dish!
         """,
         'food_name': 'Lemon Garlic Butter Shrimp',
-        'food_image': 'Lemon_Garlic_Butter_Shrimp.jpg'
+        'food_image': 'image/Lemon_Garlic_Butter_Shrimp.jpg'
     },
     'Macaroni and Cheese': {
         'recipe': """
@@ -239,7 +239,7 @@ food_recipes = {
             8. Serve your Gourmet Macaroni and Cheese hot and creamy!
         """,
         'food_name': 'Macaroni and Cheese',
-        'food_image': 'Macaroni_and_Cheese.jpg'
+        'food_image': 'image/Macaroni_and_Cheese.jpg'
     },
     'Mango Salsa': {
         'recipe': """
@@ -253,7 +253,7 @@ food_recipes = {
             8. Enjoy the freshness of Mango Salsa!
         """,
         'food_name': 'Mango Salsa',
-        'food_image': 'Mango_Salsa.jpg'
+        'food_image': 'image/Mango_Salsa.jpg'
     },
     'Margherita Pizza': {
         'recipe': """
@@ -266,7 +266,7 @@ food_recipes = {
             7. Slice and enjoy your Margherita Pizza!
         """,
         'food_name': 'Margherita Pizza',
-        'food_image': 'Margherita_Pizza.jpg'
+        'food_image': 'image/Margherita_Pizza.jpg'
     },
     'Pad Thai': {
         'recipe': """
@@ -280,7 +280,7 @@ food_recipes = {
             8. Serve your Pad Thai with lime wedges and enjoy!
         """,
         'food_name': 'Pad Thai',
-        'food_image': 'Pad_Thai.jpg'
+        'food_image': 'image/Pad_Thai.jpg'
     },
     'Pizza': {
         'recipe': """
@@ -293,7 +293,7 @@ food_recipes = {
             7. Slice and enjoy your Margherita Pizza!
         """,
         'food_name': 'Pizza',
-        'food_image': 'Pizza.jpg'
+        'food_image': 'image/Pizza.jpg'
     },
     'Shrimp Pad See Ew': {
         'recipe': """
@@ -307,7 +307,7 @@ food_recipes = {
             8. Enjoy this Thai noodle dish!
         """,
         'food_name': 'Shrimp Pad See Ew',
-        'food_image': 'Shrimp_Pad_See_Ew.jpg'
+        'food_image': 'image/Shrimp_Pad_See_Ew.jpg'
     }, 
     'Shrimp Scampi': {
         'recipe': """
@@ -321,7 +321,7 @@ food_recipes = {
             8. Serve your delightful Shrimp Scampi!
         """,
         'food_name': 'Shrimp Scampi',
-        'food_image': 'Shrimp_Scampi.jpg'
+        'food_image': 'image/Shrimp_Scampi.jpg'
     },
     'Spaghetti Bolognese': {
         'recipe': """
@@ -334,7 +334,7 @@ food_recipes = {
             7. Garnish with grated Parmesan cheese and fresh basil.
         """,
         'food_name': 'Spaghetti Bolognese',
-        'food_image': 'Spaghetti_Bolognese.jpg'
+        'food_image': 'image/Spaghetti_Bolognese.jpg'
     },
     'Spring Rolls': {
         'recipe': """
@@ -347,7 +347,7 @@ food_recipes = {
             7. Enjoy these light and flavorful rolls!
         """,
         'food_name': 'Spring Rolls',
-        'food_image': 'Spring_Rolls.jpg'
+        'food_image': 'image/Spring_Rolls.jpg'
     },
     'Steak Tacos': {
         'recipe': """
@@ -360,7 +360,7 @@ food_recipes = {
             7. Enjoy your flavorful Steak Tacos!
         """,
         'food_name': 'Steak Tacos',
-        'food_image': 'Steak_Tacos.jpeg'
+        'food_image': 'image/Steak_Tacos.jpeg'
     },
     'Tiramisu': {
         'recipe': """
@@ -374,7 +374,7 @@ food_recipes = {
             8. Slice and enjoy the classic Italian dessert!
         """,
         'food_name': 'Tiramisu',
-        'food_image': 'Tiramisu.jpg'
+        'food_image': 'image/Tiramisu.jpg'
     },
     'Tomato Basil Pasta': {
         'recipe': """
@@ -388,7 +388,7 @@ food_recipes = {
             8. Enjoy the simplicity of Tomato Basil Pasta!
         """,
         'food_name': 'Tomato Basil Pasta',
-        'food_image': 'Tomato_Basil_Pasta.jpg'
+        'food_image': 'image/Tomato_Basil_Pasta.jpg'
     },
     'Vegetable Stir-Fry': {
         'recipe': """
@@ -401,7 +401,7 @@ food_recipes = {
             7. Enjoy this quick and healthy dish!
         """,
         'food_name': 'Vegetable Stir-Fry',
-        'food_image': 'Vegetable_Stir_Fry.jpg'
+        'food_image': 'image/Vegetable_Stir_Fry.jpg'
     }
 }
 
@@ -440,7 +440,8 @@ def recipe_info(request):
     if food_name and food_name in food_recipes:
         recipe_details = food_recipes[food_name]
         recipe = recipe_details['recipe']
-        response = render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'visit_count': visit_count, 'recipe': recipe})
+        image_path = recipe_details.get('food_image', '')  # Get the image path
+        response = render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'visit_count': visit_count, 'recipe': recipe, 'image_path': image_path})
         
         response.set_cookie(key=visit_count_key_with_date, value=visit_count, expires=datetime.datetime.combine(current_date + datetime.timedelta(days=1), datetime.time.min))
         return response

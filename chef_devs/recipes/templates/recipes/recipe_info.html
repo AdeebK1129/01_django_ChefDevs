@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  {% load static %}
   {% if error_message %}
     <p>{{ error_message }}</p>
   {% else %}
     <h1>{{ food_name }}</h1>
+    <img src="{% static image_path %}" alt="{{ food_name }} Image">  
     <p>Visit Count: {{ visit_count }}</p>
     {% if recipe %}
     <p>{{ recipe|linebreaks }}</p>
