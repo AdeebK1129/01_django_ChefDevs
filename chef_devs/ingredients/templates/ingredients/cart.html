@@ -24,10 +24,10 @@
     {{ cart_items }}
   </pre>
 
-  <form action="{% url 'clear_cart' %}" method="post">
+  <form action="{% url 'ingredients:clear_cart' %}" method="post">
     {% csrf_token %}
     <button type="submit">Clear Cart</button>
   </form>
 
-  <p><a href="{% url 'index' %}">Go Back</a></p>
+  <p><a href="{% url 'ingredients:index' %}">Go Back</a></p>
 {% endblock %}

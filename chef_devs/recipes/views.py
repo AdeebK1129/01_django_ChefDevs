@@ -405,7 +405,7 @@ food_recipes = {
     }
 }
 
-#Index
+#Index View with Post Form
 def index(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST)
@@ -421,7 +421,7 @@ def index(request):
 
     return render(request, 'recipes/index.html', {'form': form, 'food_name': None, 'recipe': None, 'food_recipes': food_recipes})
 
-
+#Recipe Info View with Cookies 
 def recipe_info(request):
     food_name = request.POST.get('food_name')
     visit_count_key = f'visit_count_{food_name.replace(" ", "_")}' if food_name else 'visit_count_unknown'
@@ -440,7 +440,7 @@ def recipe_info(request):
     if food_name and food_name in food_recipes:
         recipe_details = food_recipes[food_name]
         recipe = recipe_details['recipe']
-        image_path = recipe_details.get('food_image', '')  # Get the image path
+        image_path = recipe_details.get('food_image', '')  
         response = render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'visit_count': visit_count, 'recipe': recipe, 'image_path': image_path})
         
         response.set_cookie(key=visit_count_key_with_date, value=visit_count, expires=datetime.datetime.combine(current_date + datetime.timedelta(days=1), datetime.time.min))
@@ -448,8 +448,3 @@ def recipe_info(request):
     else:
         error_message = f'Sorry, no recipe available for "{food_name}". Try going back and searching for a food from the recipes list.'
         return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None})
-    
-
-
-
-

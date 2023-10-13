@@ -9,12 +9,12 @@
     <p>Stock Available: {{stock}}</p>
     <p>Price per Unit: ${{price}}</p>
     
-    <form action="{% url 'cart' %}" method="post">
+    <form action="{% url 'ingredients:cart' %}" method="post">
      {% csrf_token %}
      {{ form.as_p }}
      <button type="submit">Buy Ingredients</button>
    </form>
     
   {% endif %}
-  <p><a href="{% url 'index' %}">Go Back</a></p>
+  <p><a href="{% url 'ingredients:index' %}">Go Back</a></p>
 {% endblock %}
