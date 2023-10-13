@@ -16,7 +16,8 @@ food_recipes = {
             7. Garnish with sesame seeds and green onions.
             8. Enjoy this flavorful stir-fry!
         """,
-        'food_name': 'Beef and Broccoli'
+        'food_name': 'Beef and Broccoli',
+        'food_image': 'Beef_and_Broccoli_Stir-Fry.jpg'
     },
     'Bibimbap': {
         'recipe': """
@@ -29,7 +30,8 @@ food_recipes = {
             7. Add a dollop of gochujang (Korean red pepper paste).
             8. Mix everything together before eating your Bibimbap!
         """,
-        'food_name': 'Bibimbap'
+        'food_name': 'Bibimbap',
+        'food_image': 'Bibimbap.jpg'
     },
     'Caprese Salad': {
         'recipe': """
@@ -40,7 +42,8 @@ food_recipes = {
             5. Sprinkle with salt and pepper to taste.
             6. Serve your Caprese Salad immediately for a refreshing dish!
         """,
-        'food_name': 'Caprese Salad'
+        'food_name': 'Caprese Salad',
+        'food_image': 'Caprese_Salad.jpg'
     },
     'Caesar Salad': {
         'recipe': """
@@ -51,7 +54,8 @@ food_recipes = {
             5. Add freshly ground black pepper and a squeeze of lemon.
             6. Serve your Caesar Salad chilled and enjoy!
         """,
-        'food_name': 'Caesar Salad'
+        'food_name': 'Caesar Salad',
+        'food_image': 'Caesar_Salad.webp'
     },
     'Chicken Alfredo': {
         'recipe': """
@@ -63,7 +67,8 @@ food_recipes = {
             6. Toss the cooked pasta in the Alfredo sauce.
             7. Garnish with parsley and extra Parmesan before serving.
         """,
-        'food_name': 'Chicken Alfredo'
+        'food_name': 'Chicken Alfredo',
+        'food_image': 'Chicken_Alfredo.jpg'
     },
     'Chicken Curry': {
         'recipe': """
@@ -75,7 +80,8 @@ food_recipes = {
             6. Serve the Chicken Curry over rice or with naan bread.
             7. Enjoy the rich flavors of your Chicken Curry!
         """,
-        'food_name': 'Chicken Curry'
+        'food_name': 'Chicken Curry',
+        'food_image': 'Chicken_Curry.jpg'
     },
     'Chicken Fajitas': {
         'recipe': """
@@ -87,7 +93,8 @@ food_recipes = {
             6. Top with salsa, guacamole, and sour cream.
             7. Serve your flavorful Chicken Fajitas!
         """,
-        'food_name': 'Chicken Fajitas'
+        'food_name': 'Chicken Fajitas',
+        'food_image': 'Chicken_Fajitas.jpg'
     },
     'Chicken Parmesan': {
         'recipe': """
@@ -100,7 +107,8 @@ food_recipes = {
             7. Garnish with fresh basil and grated Parmesan.
             8. Enjoy your flavorful Chicken Parmesan!
         """,
-        'food_name': 'Chicken Parmesan'
+        'food_name': 'Chicken Parmesan',
+        'food_image': 'Chicken_Parmesan.jpg'
     },
     'Chicken Teriyaki': {
         'recipe': """
@@ -111,21 +119,21 @@ food_recipes = {
             5. Serve the Chicken Teriyaki over steamed rice.
             6. Garnish with sesame seeds and enjoy the savory dish!
         """,
-        'food_name': 'Chicken Teriyaki'
+        'food_name': 'Chicken Teriyaki',
+        'food_image': 'Chicken_Teriyaki.jpg'
     },
     'Chocolate Cake': {
         'recipe': """
             1. Preheat the oven to 350°F (175°C) and grease two cake pans.
             2. In a bowl, mix flour, cocoa powder, baking soda, and salt.
             3. In another bowl, beat butter, sugar, eggs, and vanilla extract.
-            4. Gradually add the
-
- dry ingredients to the wet ingredients, alternating with milk.
+            4. Gradually add the dry ingredients to the wet ingredients, alternating with milk.
             5. Pour the batter into the prepared pans and bake for 30-35 minutes.
             6. Let the cakes cool, then frost with chocolate icing.
             7. Slice and enjoy your decadent Chocolate Cake!
         """,
-        'food_name': 'Chocolate Cake'
+        'food_name': 'Chocolate Cake',
+        'food_image': 'Chocolate_Cake.jpg'
     },
     'Chocolate Chip Cookies': {
         'recipe': """
@@ -139,7 +147,8 @@ food_recipes = {
             8. Let the cookies cool on the baking sheet for a few minutes before transferring to a wire rack.
             9. Enjoy warm and gooey Chocolate Chip Cookies!
         """,
-        'food_name': 'Chocolate Chip Cookies'
+        'food_name': 'Chocolate Chip Cookies',
+        'food_image': 'Chocolate_Chip_Cookies_.jpg'
     },
     'Dim Sum Shumai': {
         'recipe': """
@@ -150,7 +159,8 @@ food_recipes = {
             5. Garnish with chopped green onions.
             6. Serve the Shumai with soy sauce and enjoy your Dim Sum!
         """,
-        'food_name': 'Dim Sum Shumai'
+        'food_name': 'Dim Sum Shumai',
+        'food_image': 'Dim_Sum_Shumai.jpg'
     },
     'Gourmet Macaroni and Cheese': {
         'recipe': """
@@ -163,7 +173,8 @@ food_recipes = {
             7. Optional: Top with breadcrumbs and bake until golden and bubbly.
             8. Serve your Gourmet Macaroni and Cheese hot and creamy!
         """,
-        'food_name': 'Macaroni and Cheese'
+        'food_name': 'Macaroni and Cheese',
+        'food_image': 'Gourmet_Macaroni_and_Cheese.jpg'
     },
     'Grilled Salmon': {
         'recipe': """
@@ -174,7 +185,8 @@ food_recipes = {
             5. Serve the Grilled Salmon with a side of vegetables or salad.
             6. Enjoy the light and healthy Grilled Salmon!
         """,
-        'food_name': 'Salmon'
+        'food_name': 'Grilled Salmon',
+        'food_image': 'Grilled_Salmon.jpg'
     },
     'Hamburger': {
         'recipe': """
@@ -185,7 +197,8 @@ food_recipes = {
             5. Add cheese if desired and let it melt.
             6. Place the patty on the bun, stack toppings, and enjoy your Hamburger!
         """,
-        'food_name': 'Hamburger'
+        'food_name': 'Hamburger',
+        'food_image': 'Hamburger.jpg'
     },
     'Kung Pao Chicken': {
         'recipe': """
@@ -198,7 +211,8 @@ food_recipes = {
             7. Serve your flavorful Kung Pao Chicken over rice.
             8. Enjoy the spicy and tangy taste!
         """,
-        'food_name': 'Kung Pao Chicken'
+        'food_name': 'Kung Pao Chicken',
+        'food_image': 'Kung_Pao_Chicken.jpg'
     },
     'Lemon Garlic Butter Shrimp': {
         'recipe': """
@@ -210,7 +224,8 @@ food_recipes = {
             6. Serve the Lemon Garlic Butter Shrimp over pasta or rice.
             7. Enjoy the zesty flavors of this quick dish!
         """,
-        'food_name': 'Lemon Garlic Butter Shrimp'
+        'food_name': 'Lemon Garlic Butter Shrimp',
+        'food_image': 'Lemon_Garlic_Butter_Shrimp.jpg'
     },
     'Macaroni and Cheese': {
         'recipe': """
@@ -223,7 +238,8 @@ food_recipes = {
             7. Optional: Top with breadcrumbs and bake until golden and bubbly.
             8. Serve your Gourmet Macaroni and Cheese hot and creamy!
         """,
-        'food_name': 'Macaroni and Cheese'
+        'food_name': 'Macaroni and Cheese',
+        'food_image': 'Macaroni_and_Cheese.jpg'
     },
     'Mango Salsa': {
         'recipe': """
@@ -236,11 +252,10 @@ food_recipes = {
             7. Serve with tortilla chips or as a topping for grilled chicken.
             8. Enjoy the freshness of Mango Salsa!
         """,
-        'food_name': 'Mango Salsa'
+        'food_name': 'Mango Salsa',
+        'food_image': 'Mango_Salsa.jpg'
     },
     'Margherita Pizza': {
-
-
         'recipe': """
             1. Preheat the oven to 475°F (245°C).
             2. Roll out pizza dough on a floured surface.
@@ -250,7 +265,8 @@ food_recipes = {
             6. Bake in the oven for 10-12 minutes or until the crust is golden.
             7. Slice and enjoy your Margherita Pizza!
         """,
-        'food_name': 'Pizza'
+        'food_name': 'Margherita Pizza',
+        'food_image': 'Margherita_Pizza.jpg'
     },
     'Pad Thai': {
         'recipe': """
@@ -263,7 +279,8 @@ food_recipes = {
             7. Stir everything together until well combined.
             8. Serve your Pad Thai with lime wedges and enjoy!
         """,
-        'food_name': 'Pad Thai'
+        'food_name': 'Pad Thai',
+        'food_image': 'Pad_Thai.jpg'
     },
     'Pizza': {
         'recipe': """
@@ -275,7 +292,8 @@ food_recipes = {
             6. Bake in the oven for 10-12 minutes or until the crust is golden.
             7. Slice and enjoy your Margherita Pizza!
         """,
-        'food_name': 'Pizza'
+        'food_name': 'Pizza',
+        'food_image': 'Pizza.jpg'
     },
     'Shrimp Pad See Ew': {
         'recipe': """
@@ -288,7 +306,8 @@ food_recipes = {
             7. Serve your Shrimp Pad See Ew with lime wedges.
             8. Enjoy this Thai noodle dish!
         """,
-        'food_name': 'Pad See Ew'
+        'food_name': 'Shrimp Pad See Ew',
+        'food_image': 'Shrimp_Pad_See_Ew.jpg'
     }, 
     'Shrimp Scampi': {
         'recipe': """
@@ -301,7 +320,8 @@ food_recipes = {
             7. Garnish with chopped parsley and grated Parmesan.
             8. Serve your delightful Shrimp Scampi!
         """,
-        'food_name': 'Shrimp Scampi'
+        'food_name': 'Shrimp Scampi',
+        'food_image': 'Shrimp_Scampi.jpg'
     },
     'Spaghetti Bolognese': {
         'recipe': """
@@ -313,7 +333,8 @@ food_recipes = {
             6. Serve the Bolognese sauce over cooked spaghetti.
             7. Garnish with grated Parmesan cheese and fresh basil.
         """,
-        'food_name': 'Spaghetti'
+        'food_name': 'Spaghetti Bolognese',
+        'food_image': 'Spaghetti_Bolognese.jpg'
     },
     'Spring Rolls': {
         'recipe': """
@@ -321,13 +342,12 @@ food_recipes = {
             2. Dip rice paper wrappers in warm water to soften.
             3. Place a lettuce leaf on the wrapper and add noodles, shredded carrots, and mint leaves.
             4. Fold the sides of the wrapper and roll tightly.
-
-
             5. Mix hoisin sauce with peanut butter for dipping.
             6. Serve your fresh Spring Rolls with the peanut sauce.
             7. Enjoy these light and flavorful rolls!
         """,
-        'food_name': 'Spring Rolls'
+        'food_name': 'Spring Rolls',
+        'food_image': 'Spring_Rolls.jpg'
     },
     'Steak Tacos': {
         'recipe': """
@@ -339,7 +359,8 @@ food_recipes = {
             6. Optional: Add salsa or guacamole for extra flavor.
             7. Enjoy your flavorful Steak Tacos!
         """,
-        'food_name': 'Steak Tacos'
+        'food_name': 'Steak Tacos',
+        'food_image': 'Steak_Tacos.jpeg'
     },
     'Tiramisu': {
         'recipe': """
@@ -352,7 +373,8 @@ food_recipes = {
             7. Refrigerate the Tiramisu for at least 4 hours.
             8. Slice and enjoy the classic Italian dessert!
         """,
-        'food_name': 'Tiramisu'
+        'food_name': 'Tiramisu',
+        'food_image': 'Tiramisu.jpg'
     },
     'Tomato Basil Pasta': {
         'recipe': """
@@ -365,7 +387,8 @@ food_recipes = {
             7. Garnish with grated Parmesan cheese.
             8. Enjoy the simplicity of Tomato Basil Pasta!
         """,
-        'food_name': 'Tomato Basil Pasta'
+        'food_name': 'Tomato Basil Pasta',
+        'food_image': 'Tomato_Basil_Pasta.jpg'
     },
     'Vegetable Stir-Fry': {
         'recipe': """
@@ -377,7 +400,8 @@ food_recipes = {
             6. Serve your Vegetable Stir-Fry over rice or noodles.
             7. Enjoy this quick and healthy dish!
         """,
-        'food_name': 'Vegetable Stir-Fry'
+        'food_name': 'Vegetable Stir-Fry',
+        'food_image': 'Vegetable_Stir_Fry.jpg'
     }
 }
 
