@@ -29,12 +29,11 @@
 </head>
 
 <body style="background-color: black; color: white;">
-
     <header>
-        <img src="{% static 'image/Chef_Dev_Logo.png' %}" alt="Chef Dev Logo" class="chef-logo">
+        {% load static %}
         <h1>{% block header %}Chef Devs{% endblock %}</h1>
     </header>
-
+   
     <main>
         {% block content %}{% endblock %}
     </main>

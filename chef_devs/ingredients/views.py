@@ -139,7 +139,10 @@ def checkout_info(request):
     if ingredient_name in ingredients:
         stock = ingredients[ingredient_name][0]
         price = ingredients[ingredient_name][1]
-        form = CartForm(initial={'ingredient_name': ingredient_name})  # Pass ingredient_name as initial value
+        max_quantity = stock  # Set max_quantity to the available stock
+        form = CartForm(initial={'ingredient_name': ingredient_name, 'quantity': 1, 'view': False})
+        form.fields['quantity'].widget.attrs['max'] = max_quantity  # Update max_value attribute
+
         response = render(request, 'ingredients/checkout_info.html', {
             'ingredient_name': ingredient_name,
             'stock': stock,
@@ -166,6 +169,7 @@ def checkout_info(request):
             'ingredients': ingredients,
             'form': form  # Include CartForm in the context
         })
+
 
 
 def cart(request):
