@@ -8,7 +8,11 @@
         <input type="submit" value="Submit" />
     </form>
 
-    <p style="padding-top: 10px;"><a href="{% url 'ingredients:cart' %}" style="color: white;">Go to Cart</a></p>
+    <p style="padding-top: 10px;">
+        <a href="{% url 'ingredients:cart' %}" style="color: white;">
+            <img src="{% static 'image/cart.jpg' %}" alt="Cart" width="50" height="50">
+        </a>
+    </p>
 
     <h3>All Ingredients, Stocks and Prices</h3>
 

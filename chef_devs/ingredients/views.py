@@ -51,7 +51,7 @@ ingredients = {
     "Ground shrimp": [40, 6.0],
     "Honey glaze": [20, 4.0],
     "Italian herbs": [25, 2.0],
-    "Jalapeño": [30, 0.5],
+    "Jalapeno": [30, 0.5],
     "Kale": [25, 1.0],
     "Lemon": [50, 0.5],
     "Lemon juice": [50, 1.0],
