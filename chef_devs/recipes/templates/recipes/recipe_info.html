@@ -1,18 +1,15 @@
-{% extends 'base.html' %}
-
-{% block content %}
-  {% load static %}
-  {% if error_message %}
-    <p>{{ error_message }}</p>
-  {% else %}
-    <h1>{{ food_name }}</h1>
-    <img src="{% static image_path %}" alt="{{ food_name }} Image" style="width: 50%; height: 50%;">  
-    <p>Visit Count: {{ visit_count }}</p>
-    {% if recipe %}
-    <p>{{ recipe|linebreaks }}</p>
-    {% elif food_name %}
-    <p>No recipe available for {{ food_name }}</p>
-    {% endif %}
-  {% endif %}
-  <p><a href="{% url 'recipes:index' %}">Go Back</a></p>
+{% extends 'base.html' %} {% block content %} {% load static %} {% if error_message %}
+<p>{{ error_message }}</p>
+{% else %}
+<h1>{{ food_name }}</h1>
+{% if image_path %}
+<img src="{% static image_path %}" alt="{{ food_name }} Image" style="width: 50%; height: 50%" />
+{% endif %}
+<p>Visit Count: {{ visit_count }}</p>
+{% if recipe %}
+<p>{{ recipe|linebreaks }}</p>
+{% elif food_name %}
+<p>No recipe available for {{ food_name }}</p>
+{% endif %} {% endif %}
+<p><a href="{% url 'recipes:index' %}">Go Back</a></p>
 {% endblock %}
