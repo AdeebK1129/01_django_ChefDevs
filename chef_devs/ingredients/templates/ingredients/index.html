@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+        
+    {% endblock head %}
+</head>
+
+<body>
 {% block content %}
     <h3>Ingredient Search</h3>
     <form method="post" action="{% url 'ingredients:checkout_info' %}">
@@ -8,12 +19,13 @@
         <input type="submit" value="Submit" />
     </form>
 
-    <p style="padding-top: 10px;">
-        <a href="{% url 'ingredients:cart' %}" style="color: white;">
-            <img src="{% static 'image/cart.jpg' %}" alt="Cart" width="50" height="50">
-        </a>
-    </p>
+        <div style="position: absolute; top: 10px; right: 10px;">
+            <a href="{% url 'ingredients:cart' %}" style="color: white;">
+                <img src="{% static 'image/cart.jpg' %}" alt="Cart" width="50" height="50">
+            </a>
+        </div>
 
+        <br>
     <h3>All Ingredients, Stocks and Prices</h3>
 
     {% load static %}
@@ -42,3 +54,6 @@
 
     <p style="padding-top: 10px;"><a href="{% url 'recipes:index' %}" style="color: white;">Go to Recipes</a></p>
 {% endblock %}
+
+</body>
+    </html>
