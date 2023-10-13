@@ -41,11 +41,11 @@
 
 <body>
 {% block content %}
-    <h3>Ingredient Search</h3>
+<h3>All Ingredients, Stocks and Prices</h3>
     <form method="post" action="{% url 'ingredients:checkout_info' %}">
         {% csrf_token %} 
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Go" />
     </form>
 
         <div style="position: absolute; top: 10px; right: 10px;">
@@ -55,7 +55,6 @@
         </div>
 
         <br>
-    <h3>All Ingredients, Stocks and Prices</h3>
 
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
