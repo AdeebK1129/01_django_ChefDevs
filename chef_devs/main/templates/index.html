@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
+        <title>{% block title %}ChefDevs{% endblock %}</title>
+
+        <style>
+            a:link {
+                color: white;
+                display: block;
+                text-align: center;
+                margin-bottom: 10px;
+            }  
+            a:visited {
+                color: white;
+            }
+            a:hover {
+                color: lightblue;
+                text-decoration: underline;
+            }
+            .chef-container {
+                border: 5px solid white;
+                padding: 10px;
+                text-align: center;
+                margin: 20px auto;
+                max-width: 300px;
+            }
+            .chef-logo {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+
+        
+    {% endblock head %}
+</head>
+
+<body style="background-color: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; text-align: center;">
+    <img src="{% static 'image/Chef_Dev_Logo.png' %}" alt="Chef Dev Logo" class="chef-logo">
+    <header class="chef-container">
+        {% load static %}
+        <a href="{% url 'ingredients:index' %}">Go to Ingredients</a>
+        <p><a href="{% url 'recipes:index' %}">Go to Recipes</a></p>
+        <p><a href="https://github.com/AdeebK1129/01_django_ChefDevs">Go to Repository</a></p>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+
+</html>
