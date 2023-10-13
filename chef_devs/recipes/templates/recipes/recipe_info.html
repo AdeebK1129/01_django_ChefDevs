@@ -6,7 +6,7 @@
     <p>{{ error_message }}</p>
   {% else %}
     <h1>{{ food_name }}</h1>
-    <img src="{% static image_path %}" alt="{{ food_name }} Image">  
+    <img src="{% static image_path %}" alt="{{ food_name }} Image" style="width: 50%; height: 50%;">  
     <p>Visit Count: {{ visit_count }}</p>
     {% if recipe %}
     <p>{{ recipe|linebreaks }}</p>

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<p> Using our Recipe Search form, you will be able to view the recipe of any of the foods from the list below. Ensure that when searching for a given food that all letters typed exactly how they are in the list. This form is CASE SENSITIVE. </p>
 <h2>Recipe Search</h2>
 <form method="post" action="{% url 'recipes:recipe_info' %}">
     {% csrf_token %}
