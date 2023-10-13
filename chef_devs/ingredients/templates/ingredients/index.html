@@ -5,9 +5,38 @@
 <html lang="en">
 
 <head>
-    {% block head %}
-        
-    {% endblock head %}
+  {% block head %}
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+      <style>
+        a:link {
+            color: white;
+        }  
+        a:visited {
+            color: white;
+        }
+        a:hover {
+            color: lightblue;
+            text-decoration: underline;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    </style>
+    
+  {% endblock head %}
 </head>
 
 <body>

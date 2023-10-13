@@ -9,6 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
+        <link rel="shortcut icon" href="/static/image/Chef_Dev_Logo.png">
         <title>{% block title %}ChefDevs{% endblock %}</title>
 
         <style>
@@ -22,18 +23,38 @@
                 color: lightblue;
                 text-decoration: underline;
             }
+
+            nav {
+                background-color: #333;
+                overflow: hidden;
+            }
+
+            nav a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
         </style>
 
-        
     {% endblock head %}
 </head>
 
 <body style="background-color: black; color: white;">
+
+    <nav>
+        <a href="{% url 'main:index' %}">Home</a>
+        <a href="{% url 'recipes:index' %}">Recipes</a>
+        <a href="{% url 'ingredients:index' %}">Ingredients</a>
+    </nav>
+
     <header>
         {% load static %}
         <h1>{% block header %}Chef Devs{% endblock %}</h1>
     </header>
-   
+
     <main>
         {% block content %}{% endblock %}
     </main>
