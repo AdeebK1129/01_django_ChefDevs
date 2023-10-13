@@ -475,3 +475,23 @@ def forms(request):
         return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'visit_count': visit_count, 'recipe': recipe, 'image_path': image_path,'food_recipes': food_recipes})
 
     return render(request, 'recipes/forms.html', {'food_recipes': food_recipes})
+
+def list_view(request):
+    if request.method == "POST":
+        if 'Submit1' in request.POST:
+            food_name = request.POST.get('food_name')
+            food_recipe = request.POST.get('food_recipe')
+            food_recipes[food_name] = food_recipe
+            print('submit 1')
+            return render(request, 'recipes/list_view.html', {'food_recipes': food_recipes})
+        
+        if 'Submit2' in request.POST:
+            food_name = request.POST.get('food_name')
+            if food_name in food_recipes:
+                food_recipes.pop(food_name)
+                return render(request, 'recipes/list_view.html', {'food_recipes': food_recipes})
+            else: 
+                error_message = f'Sorry, "{food_name}" does not exist. Try going back and searching for a food from the recipes list.'
+            return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'recipe': None, })
+                
+    return render(request, 'recipes/list_view.html', {'food_recipes': food_recipes})

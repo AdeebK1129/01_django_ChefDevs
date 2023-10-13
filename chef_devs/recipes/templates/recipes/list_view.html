@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Add a recipe!</h2>
+<form action="" method="post">
+	{% csrf_token %}
+	<label for="food_name">Food Name:</label><br />
+	<input type="text" id="food_name" name="food_name" /><br />
+	<label for="food_recipe">Food Recipe:</label><br />
+	<input type="text" id="food_recipe" name="food_recipe" /><br />
+	<input type="submit" value="Submit" name="Submit1" />
+</form>
+<h2>Delete a recipe!</h2>
+<form action="" method="post">
+	{% csrf_token %}
+	<label for="food_name">Food Name:</label><br />
+	<input type="text" id="food_name" name="food_name" /><br />
+	<input type="submit" value="Submit" name="Submit2" />
+</form>
+
+<h2>All Foods</h2>
+<ul>
+	{% for food in food_recipes %}
+	<li>{{ food }}</li>
+	{% endfor %}
+</ul>
+
+<p><a href="{% url 'ingredients:index' %}">Go to Ingredients</a></p>
+{%endblock%}
