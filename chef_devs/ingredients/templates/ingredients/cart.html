@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <h1>Shopping Cart</h1>
-  <p>Number of Items in Cart: {{ cart_items|length }}</p>
-  <table>
-    <tr>
-      <th>Ingredient</th>
-      <th>Quantity</th>
-      <th>Total Price</th>
-    </tr>
-    {% for item_name, item_details in cart_items.items %}
-      <tr>
-        <td>{{ item_name }}</td>
-        <td>{{ item_details.quantity }}</td>
-        <td>${{ item_details.total_price }}</td>
-      </tr>
-    {% endfor %}
-  </table>
-  <p>Total Money Spent: ${{ total_cost }}</p>
-
-  <h2>Debugging Cart Items</h2>
-  <pre>
-    {{ cart_items }}
-  </pre>
-
-  <form action="{% url 'ingredients:clear_cart' %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Clear Cart</button>
-  </form>
-
-  <p><a href="{% url 'ingredients:index' %}">Go Back</a></p>
-{% endblock %}
+     {% block content %}
+       <h1>Shopping Cart</h1>
+       <p>Number of Items in Cart: {{ cart_items|length }}</p>
+       <table>
+         <tr>
+           <th>Ingredient</th>
+           <th>Quantity</th>
+           <th>Total Price</th>
+         </tr>
+         {% for item_name, item_details in cart_items.items %}
+           <tr>
+             <td>{{ item_name }}</td>
+             <td>{{ item_details.quantity }}</td>
+             <td>${{ item_details.total_price }}</td>
+           </tr>
+         {% endfor %}
+       </table>
+       <p>Total Money Spent: ${{ total_cost }}</p>
+     
+       <h2>Debugging Cart Items</h2>
+       <pre>
+         {{ cart_items }}
+       </pre>
+     
+       <form action="{% url 'ingredients:clear_cart' %}" method="post">
+         {% csrf_token %}
+         <button type="submit">Clear Cart</button>
+       </form>
+     
+       <p><a href="{% url 'ingredients:index' %}">Go Back</a></p>
+     {% endblock %}

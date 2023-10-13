@@ -1,45 +1,40 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
-<h3>Ingredient Search</h3>
-<form method="post" action="{% url 'ingredients:checkout_info' %}">
-	{% csrf_token %} 
-     {{ form.as_p }}
-	<input type="submit" value="Submit" />
-</form>
+{% block content %}
+    <h3>Ingredient Search</h3>
+    <form method="post" action="{% url 'ingredients:checkout_info' %}">
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
 
+    <p><a href="{% url 'ingredients:cart' %}">Go to Cart  </a></p>
 
-<h3>All Ingredients, Stocks and Prices</h3>
+    <h3>All Ingredients, Stocks and Prices</h3>
 
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
-<div style="display: flex; overflow-x: auto;">
+    <div style="display: flex; overflow-x: auto;">
 
-     {% for ingredient_group in ingredient_groups %}
-       <table style="margin-right: 10px;">
-         <tr>
-           <th>Ingredient</th>
-           <th>Stock</th>
-           <th>Price($)</th>
-         </tr>
-         {% for ingredient, data in ingredient_group %}
-           <tr>
-             <td>{{ ingredient }}</td>
-             <td>{{ data.0 }}</td>
-             <td>{{ data.1 }}</td>
-           </tr>
-         {% endfor %}
-       </table>
-     {% endfor %}
-   
-</div>
+        {% for ingredient_group in ingredient_groups %}
+            <table style="margin-right: 10px;">
+                <tr>
+                    <th>Ingredient</th>
+                    <th>Stock</th>
+                    <th>Price($)</th>
+                </tr>
+                {% for ingredient, data in ingredient_group %}
+                    <tr>
+                        <td style="color: black;">{{ ingredient }}</td>
+                        <td style="color: black;">{{ data.0 }}</td>
+                        <td style="color: black;">{{ data.1 }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
 
-<a href="{% url 'ingredients:cart' %}">Go to Cart  </a>
-<a href="{% url 'recipes:index' %}">Go to Recipes</a></p>
-   
-   
-   
+    </div>
 
-   
+    <p><a href="{% url 'recipes:index' %}">Go to Recipes</a></p>
 {% endblock %}
-

@@ -10,10 +10,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
         <title>{% block title %}ChefDevs{% endblock %}</title>
+
+        <style>
+            a:link {
+                color: white;
+            }  
+            a:visited {
+                color: white;
+            }
+            a:hover {
+                color: lightblue;
+                text-decoration: underline;
+            }
+        </style>
+
+        
     {% endblock head %}
 </head>
 
-<body>
+<body style="background-color: black; color: white;">
+
     <header>
         <img src="{% static 'image/Chef_Dev_Logo.png' %}" alt="Chef Dev Logo" class="chef-logo">
         <h1>{% block header %}Chef Devs{% endblock %}</h1>
