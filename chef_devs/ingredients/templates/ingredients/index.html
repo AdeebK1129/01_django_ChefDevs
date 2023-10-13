@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <h3>Ingredient Search</h3>
-<form method="post" action="{% url 'checkout_info' %}">
+<form method="post" action="{% url 'ingredients:checkout_info' %}">
 	{% csrf_token %} 
      {{ form.as_p }}
 	<input type="submit" value="Submit" />
@@ -34,7 +34,7 @@
    
 </div>
 
-<a href="{% url 'cart' %}">Go to Cart</a>
+<a href="{% url 'ingredients:cart' %}">Go to Cart</a>
 
    
    
