@@ -1,33 +1,43 @@
 {% extends 'base.html' %}
 
-     {% block content %}
-       <h1>Shopping Cart</h1>
-       <p>Number of Items in Cart: {{ cart_items|length }}</p>
-       <table>
-         <tr>
-           <th>Ingredient</th>
-           <th>Quantity</th>
-           <th>Total Price</th>
-         </tr>
-         {% for item_name, item_details in cart_items.items %}
-           <tr>
-             <td>{{ item_name }}</td>
-             <td>{{ item_details.quantity }}</td>
-             <td>${{ item_details.total_price }}</td>
-           </tr>
-         {% endfor %}
-       </table>
-       <p>Total Money Spent: ${{ total_cost }}</p>
-     
-       <h2>Debugging Cart Items</h2>
-       <pre>
-         {{ cart_items }}
-       </pre>
-     
-       <form action="{% url 'ingredients:clear_cart' %}" method="post">
-         {% csrf_token %}
-         <button type="submit">Clear Cart</button>
-       </form>
-     
-       <p><a href="{% url 'ingredients:index' %}">Go Back</a></p>
-     {% endblock %}
+{% block content %}
+  <h1>Shopping Cart</h1>
+  <p>Cart Size: {{ cart_items|length }}</p>
+
+  {% if cart_items|length > 0 %}
+    <table style="border-collapse: collapse;">
+      <tr>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Ingredient</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Quantity</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Total Price</th>
+      </tr>
+      {% for item_name, item_details in cart_items.items %}
+        <tr style="border: 1px solid #dddddd;">
+          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ item_name }}</td>
+          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ item_details.quantity }}</td>
+          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${{ item_details.total_price }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    {% if total_cost > 0 %}
+      <p>Total Money Spent: ${{ total_cost }}</p>
+    {% else %}
+      <p>Total Money Spent: $0</p>
+    {% endif %}
+  {% else %}
+    <p>Your cart is empty.</p>
+  {% endif %}
+
+  <h2>Debugging Cart Items</h2>
+  <pre>
+    {{ cart_items }}
+  </pre>
+
+  <form action="{% url 'ingredients:clear_cart' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Clear Cart</button>
+  </form>
+
+  <p><a href="{% url 'ingredients:index' %}">Go Back</a></p>
+{% endblock %}

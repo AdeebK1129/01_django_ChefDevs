@@ -8,7 +8,7 @@
         <input type="submit" value="Submit" />
     </form>
 
-    <p><a href="{% url 'ingredients:cart' %}">Go to Cart  </a></p>
+    <p style="padding-top: 10px;"><a href="{% url 'ingredients:cart' %}" style="color: white;">Go to Cart</a></p>
 
     <h3>All Ingredients, Stocks and Prices</h3>
 
@@ -18,17 +18,17 @@
     <div style="display: flex; overflow-x: auto;">
 
         {% for ingredient_group in ingredient_groups %}
-            <table style="margin-right: 10px;">
-                <tr>
-                    <th>Ingredient</th>
-                    <th>Stock</th>
-                    <th>Price($)</th>
+            <table style="margin-right: 10px; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid black;">
+                    <th style="text-align: center; padding: 5px; color: black; background-color: LightGray;">Ingredient</th>
+                    <th style="text-align: center; padding: 5px; color: black; background-color: LightGray;">Stock</th>
+                    <th style="text-align: center; padding: 5px; color: black; background-color: LightGray;">Price($)</th>
                 </tr>
                 {% for ingredient, data in ingredient_group %}
-                    <tr>
-                        <td style="color: black;">{{ ingredient }}</td>
-                        <td style="color: black;">{{ data.0 }}</td>
-                        <td style="color: black;">{{ data.1 }}</td>
+                    <tr style="">
+                        <td style="text-align: center; padding: 5px; color: black; background-color: LightGray;">{{ ingredient }}</td>
+                        <td style="text-align: center; padding: 5px; color: black; background-color: LightGray;">{{ data.0 }}</td>
+                        <td style="text-align: center; padding: 5px; color: black; background-color: LightGray;">{{ data.1 }}</td>
                     </tr>
                 {% endfor %}
             </table>
@@ -36,5 +36,5 @@
 
     </div>
 
-    <p><a href="{% url 'recipes:index' %}">Go to Recipes</a></p>
+    <p style="padding-top: 10px;"><a href="{% url 'recipes:index' %}" style="color: white;">Go to Recipes</a></p>
 {% endblock %}

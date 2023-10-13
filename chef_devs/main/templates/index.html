@@ -25,16 +25,13 @@
                 color: lightblue;
                 text-decoration: underline;
             }
-            .chef-container {
-                border: 5px solid white;
-                padding: 10px;
-                text-align: center;
-                margin: 20px auto;
-                max-width: 300px;
-            }
             .chef-logo {
                 display: block;
                 margin: 0 auto;
+                margin-bottom: -20px;
+            }
+            .h4 + h5 {
+                margin-top: -5;
             }
         </style>
 
@@ -44,11 +41,15 @@
 
 <body style="background-color: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; text-align: center;">
     <img src="{% static 'image/Chef_Dev_Logo.png' %}" alt="Chef Dev Logo" class="chef-logo">
-    <header class="chef-container">
+    <header >
         {% load static %}
-        <a href="{% url 'ingredients:index' %}">Go to Ingredients</a>
-        <p><a href="{% url 'recipes:index' %}">Go to Recipes</a></p>
-        <p><a href="https://github.com/AdeebK1129/01_django_ChefDevs">Go to Repository</a></p>
+        <a href="{% url 'ingredients:index' %}">Ingredients App</a>
+        <p><a href="{% url 'recipes:index' %}">Recipes App</a></p>
+        <p><a href="https://github.com/AdeebK1129/01_django_ChefDevs">Our Repository</a></p>
+        <br>
+        <h4> Created by Adeeb Khan, Daniel Kibatullin, and Samuel Li </h4>
+        <h5> Novillo's Period 9 Software Development </h5>
+
     </header>
 
     <main>

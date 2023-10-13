@@ -201,8 +201,10 @@ def cart(request):
                                 'total_price': quantity * ingredients[ingredient_name][1]
                             }
 
-                       
                         total_cost = sum(item['total_price'] for item in cart_items.values())
+
+                        # Ensure total_cost is never negative
+                        total_cost = max(total_cost, 0)
 
                         return render(request, 'ingredients/cart.html', {
                             'cart_items': cart_items,
@@ -219,14 +221,22 @@ def cart(request):
         else:
             form = CartForm()
 
+    total_cost = sum(item['total_price'] for item in cart_items.values())
+
+    # Ensure total_cost is never negative
+    total_cost = max(total_cost, 0)
+
     return render(request, 'ingredients/cart.html', {
         'form': form,
         'ingredients': ingredients,
         'cart_items': cart_items,
-        'error_message': error_message
+        'error_message': error_message,
+        'total_cost': total_cost  # Add total_cost here
     })
-
+    
+    
 def clear_cart(request):
     cart_items.clear()
-    return redirect('cart')  
+    return render (request, 'ingredients/cart.html',)
+
 
