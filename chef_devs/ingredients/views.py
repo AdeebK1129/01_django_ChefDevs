@@ -95,6 +95,7 @@ ingredients = {
 }
 
 def index(request):
+    json_ingredients = json.dumps(ingredients) #json string convertion
     num_tables = 5
     ingredients_per_table = 14
 
@@ -118,10 +119,11 @@ def index(request):
     else:
         form = Checkout()
 
-    return render(request, 'ingredients/index.html', {'ingredient_groups': ingredient_groups, 'form': form})
+    return render(request, 'ingredients/index.html', {'ingredient_groups': ingredient_groups, 'form': form, 'json_ingredients': json_ingredients })
 
 
 def checkout_info(request):
+    json_ingredients = json.dumps(ingredients) #json string convertion
     ingredient_name = request.POST.get('ingredient_name')
     visit_count_key = f'visit_count_{ingredient_name.replace(" ", "_")}' if ingredient_name else 'visit_count_unknown'
     visit_count = 0
@@ -148,7 +150,8 @@ def checkout_info(request):
             'stock': stock,
             'price': price,
             'visit_count': visit_count,
-            'form': form 
+            'form': form,
+            'json_ingredients': json_ingredients,
         })
 
         response.set_cookie(key=visit_count_key_with_date, value=visit_count,
@@ -167,12 +170,14 @@ def checkout_info(request):
             'stock': stock,
             'price': price,
             'ingredients': ingredients,
-            'form': form 
+            'form': form,
+            'json_ingredients': json_ingredients,
         })
 
 
 
 def cart(request):
+    json_ingredients = json.dumps(ingredients) #json string convertion
     view_only = request.POST.get('view') == 'true'
     error_message = None
 
@@ -203,14 +208,14 @@ def cart(request):
 
                         total_cost = sum(item['total_price'] for item in cart_items.values())
 
-                        # Ensure total_cost is never negative
                         total_cost = max(total_cost, 0)
 
                         return render(request, 'ingredients/cart.html', {
                             'cart_items': cart_items,
                             'ingredients': ingredients,
                             'form': CartForm(),
-                            'total_cost': total_cost 
+                            'total_cost': total_cost,
+                            'json_ingredients': json_ingredients
                         })
                     else:
                         error_message = f"Insufficient stock. Available: {stock}"
@@ -223,7 +228,6 @@ def cart(request):
 
     total_cost = sum(item['total_price'] for item in cart_items.values())
 
-    # Ensure total_cost is never negative
     total_cost = max(total_cost, 0)
 
     return render(request, 'ingredients/cart.html', {
@@ -231,7 +235,8 @@ def cart(request):
         'ingredients': ingredients,
         'cart_items': cart_items,
         'error_message': error_message,
-        'total_cost': total_cost  # Add total_cost here
+        'total_cost': total_cost,
+        'json_ingredients': json_ingredients,
     })
     
     

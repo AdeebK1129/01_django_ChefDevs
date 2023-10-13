@@ -405,7 +405,9 @@ food_recipes = {
     }
 }
 
+#Index View with Post Form
 def index(request):
+    json_recipes = json.dumps(food_recipes) #json string convertion
     if request.method == 'POST':
         form = RecipeForm(request.POST)
         if form.is_valid():
@@ -413,7 +415,7 @@ def index(request):
             if food_name in food_recipes:
                 recipe_details = food_recipes[food_name]
                 recipe = recipe_details['recipe']
-                return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe_details': recipe_details, 'recipe': recipe})
+                return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'recipe_details': recipe_details, 'recipe': recipe, 'json_recipes': json_recipes})
 
     else:
         form = RecipeForm()
@@ -421,6 +423,7 @@ def index(request):
     return render(request, 'recipes/index.html', {'form': form, 'food_name': None, 'recipe': None, 'food_recipes': food_recipes})
 
 def recipe_info(request):
+    json_recipes = json.dumps(food_recipes) #json string convertion
     food_name = request.POST.get('food_name')
     visit_count_key = f'visit_count_{food_name.replace(" ", "_")}' if food_name else 'visit_count_unknown'
     visit_count = 0
@@ -445,4 +448,4 @@ def recipe_info(request):
         return response
     else:
         error_message = f'Sorry, no recipe available for "{food_name}". Try going back and searching for a food from the recipes list.'
-        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None})
+        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None, 'json_recipes': json_recipes})
