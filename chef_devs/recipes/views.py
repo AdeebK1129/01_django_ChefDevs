@@ -449,3 +449,29 @@ def recipe_info(request):
     else:
         error_message = f'Sorry, no recipe available for "{food_name}". Try going back and searching for a food from the recipes list.'
         return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None, 'json_recipes': json_recipes})
+    
+def forms(request):
+    if request.method == "POST":
+        food_name = request.POST.get('food_name')
+        json_recipes = json.dumps(food_recipes)
+        visit_count_key = f'visit_count_{food_name.replace(" ", "_")}' if food_name else 'visit_count_unknown'
+        visit_count = 0
+        current_date = datetime.datetime.now().date()
+        visit_count_key_with_date = f'{visit_count_key}_{current_date}'
+        if visit_count_key_with_date in request.COOKIES:
+            try:
+                visit_count = int(request.COOKIES[visit_count_key_with_date]) + 1
+            except ValueError:
+                visit_count = 1
+        else:
+            visit_count = 1 
+        
+        if food_name not in food_recipes:
+            error_message = f'Sorry, no recipe available for "{food_name}". Try going back and searching for a food from the recipes list.'
+            return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'error_message': error_message, 'visit_count': visit_count, 'recipe': None, 'json_recipes': json_recipes})
+        recipe_details = food_recipes[food_name]
+        recipe = recipe_details['recipe']
+        image_path = recipe_details.get('food_image', '')       
+        return render(request, 'recipes/recipe_info.html', {'food_name': food_name, 'visit_count': visit_count, 'recipe': recipe, 'image_path': image_path,'food_recipes': food_recipes})
+
+    return render(request, 'recipes/forms.html', {'food_recipes': food_recipes})
