@@ -41,6 +41,7 @@
 
 <body>
 {% block content %}
+<p> To purchase ingredients, indicate which ingredient you would like to buy (CASE SENSITIVE) and press submit. After which you will be asked to specify how much of the ingredient you would like to buy. You will then be redirected to your cart where you can choose to clear cart or go back to purchase more ingredients. </p>
 <h3>All Ingredients, Stocks and Prices</h3>
     <form method="post" action="{% url 'ingredients:checkout_info' %}">
         {% csrf_token %} 
