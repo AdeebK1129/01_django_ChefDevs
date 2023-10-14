@@ -96,7 +96,7 @@ food_recipes = {
         'food_name': 'Chicken Fajitas',
         'food_image': 'image/Chicken_Fajitas.jpg'
     },
-    'Chicken Parmesan': {
+    'Chicken Parmesan': { 
         'recipe': """
             1. Preheat the oven to 375°F (190°C).
             2. Coat chicken breasts in seasoned breadcrumbs.
